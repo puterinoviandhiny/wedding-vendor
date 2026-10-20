@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\View\View;
+
+class DashboardController extends Controller
+{
+    public function index(): View
+    {
+        $business = auth()->user()->business;
+
+        return view('dashboard.index', [
+            'business' => $business,
+        ]);
+    }
+}
